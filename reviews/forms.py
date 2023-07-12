@@ -17,7 +17,7 @@ class ReviewForm(forms.ModelForm):
         # exclude = ['owner-comment']
         labels = {
             "user_name": "Your Name",
-            "review_text": "Your Feedback",
+            "review_text": "Your Feedback", 
             "rating": "Your Rating"
         }
         error_messages = {

@@ -21,7 +21,7 @@ class ReviewView(View):
            form.save()
            return HttpResponseRedirect("/thank-you")
 
-        return render(request, "reviews/review.html", {
+        return render(request, "reviews/review.html", { 
             "form": form
          })
 
