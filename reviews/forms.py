@@ -27,3 +27,11 @@ class ReviewForm(forms.ModelForm):
               "max_length": "Please enter a shorter name!"
             }
         }
+    def clean_rating(self):
+        rating = self.cleaned_data.get('rating')
+        if rating is not None:
+            if rating < 0:
+                raise forms.ValidationError("Rating cannot be less than 0")
+            if rating > 5:
+                raise forms.ValidationError("Rating cannot be greater than 5")
+        return rating
